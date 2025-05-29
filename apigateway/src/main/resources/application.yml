@@ -1,1 +1,23 @@
-spring.application.name=apigateway
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      routes:
+        - id: userservice-status-check
+          uri: lb://userservice
+          predicates:
+            - Path=/userservice/**
+          filters:
+            - StripPrefix=1
+
+
+
+server:
+  port: 9090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+

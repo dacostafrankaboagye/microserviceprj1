@@ -55,4 +55,41 @@ http://desktop-c0oig6m.mshome.net:8081/user/status-check
 ![](./images/apigateway.png)
 
 - create a spring boot project
-  - depend: cloud gateway, reactive web, eureka client
+  - depend: cloud gateway (remove the mvc), reactive web, eureka client
+
+
+- automatic mapping of api gateway route
+```text
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+```
+
+- making request to the user service through the api gateway
+
+![](./images/eurekapoutput.png)
+
+
+#### manual routing
+
+- Note
+
+```text
+
+in the api gateway, we dont need this now 
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+```
+
+```text
+
+By default, Spring Cloud Gateway can route automatically using Eureka service names (like http://USERSERVICE/...), but manual routing gives you:
+- Fine-grained control over paths (/userservice/**, /orderservice/**, etc.)
+- The ability to rewrite paths
+- Custom filters per route (rate limiting, auth, logging)
+- Easier debugging and documentation
+- Support for fallback and retry configurations
+```
