@@ -19,3 +19,33 @@
   - particularly important because they prevent the server from 
   - trying to register with itself and attempting to fetch the 
   - registry, which is necessary when running a standalone Eureka server.
+
+
+## Services
+```text
+user service
+    - web, eureka client
+  - 8081
+  
+  
+Eureka service
+    - eureka server
+  - 8761
+
+```
+
+
+
+- Note
+- you will realise that we can call the userservice 
+  - both ways
+
+```text
+directly
+http://localhost:8081/user/status-check
+
+or 
+
+via the eureka server
+http://desktop-c0oig6m.mshome.net:8081/user/status-check
+```
