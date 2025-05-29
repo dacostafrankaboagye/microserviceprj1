@@ -49,3 +49,10 @@ or
 via the eureka server
 http://desktop-c0oig6m.mshome.net:8081/user/status-check
 ```
+
+### spring cloud api gateway
+
+![](./images/apigateway.png)
+
+- create a spring boot project
+  - depend: cloud gateway, reactive web, eureka client
