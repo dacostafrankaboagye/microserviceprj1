@@ -93,3 +93,23 @@ By default, Spring Cloud Gateway can route automatically using Eureka service na
 - Easier debugging and documentation
 - Support for fallback and retry configurations
 ```
+
+#### re-writing url
+```text
+- this is a big deal
+- take a look at the request that was made and
+- have a look at the apigateway application.yml file
+```
+
+![./images/re-writtenuri.png](./images/re-writtenuri.png)
+
+
+#### pre and post filter
+![](./images/preandpostfilter.png)
+
+- Note
+```text
+- when you have multiple filters you can order them 
+- with the order annotation
+
+```

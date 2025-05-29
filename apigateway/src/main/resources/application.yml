@@ -7,9 +7,24 @@ spring:
         - id: userservice-status-check
           uri: lb://userservice
           predicates:
-            - Path=/userservice/**
+            - Path=/userservice/user/status-check
           filters:
             - StripPrefix=1
+        - id: userservice-secret-status-check
+          uri: lb://userservice
+          predicates:
+            - Path=/userservice/app-health
+          filters:
+            - StripPrefix=1
+            - RewritePath=/app-health, /user/secret-status-check
+        - id:  userservice-create-user
+          uri: lb://userservice
+          predicates:
+            - Path=/userservice/create-user
+          filters:
+            - StripPrefix=1
+            - RewritePath=/create-user, /user/create
+
 
 
 

@@ -19,6 +19,11 @@ public class AppController {
         return "working..";
     }
 
+    @GetMapping("/secret-status-check") // but I dont want to expose this to the client -> I can re-write it in the api gateway
+    public String checkSecretStatus(){
+        return "the app is working..";
+    }
+
 
     @PostMapping("/create")
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto){
